@@ -1,6 +1,7 @@
 import flatpickr from 'flatpickr';
 // Додатковий імпорт стилів
 import 'flatpickr/dist/flatpickr.min.css';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 let intervalId = null;
 let selectedDate = null;
@@ -25,7 +26,7 @@ flatpickr(refs.dateInput, {
   onClose(selectedDates) {
     if (selectedDates[0] < Date.now()) {
       refs.startBtn.disabled = true;
-      window.alert('Please choose a date in the future');
+      Notify.warning('Please choose a date in the future', );
       return;
     } else {
       refs.startBtn.disabled = false;
