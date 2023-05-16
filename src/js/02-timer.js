@@ -26,7 +26,7 @@ flatpickr(refs.dateInput, {
   onClose(selectedDates) {
     if (selectedDates[0] < Date.now()) {
       refs.startBtn.disabled = true;
-      Notify.warning('Please choose a date in the future', );
+      Notify.warning('Please choose a date in the future');
       return;
     } else {
       refs.startBtn.disabled = false;
